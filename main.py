@@ -10,14 +10,15 @@ def canny_edge_detector(image):
     canny = cv2.Canny(blur, 50, 100)
     return canny
 
-def display_line(image, lines):
+def display_line(image, lines, lane_image):
     line_image = np.zeros_like(image)
     if lines is not None:
         for line in lines:
             x1, y1, x2, y2 = line.reshape(4)
             cv2.line(line_image, (x1, y1), (x2, y2), (255, 0, 255), 2)
+            cv2.line(lane_image, (x1, y1), (x2, y2), (0, 0, 255), 2)
     
-    return line_image
+    return lane_image
 
 def region_of_interest(image):
     height, width = image.shape
@@ -33,9 +34,9 @@ lane_image = np.copy(image)
 canny = canny_edge_detector(image)
 roi = region_of_interest(canny)
 lines = cv2.HoughLinesP(roi, 2, np.pi/180, 100, np.array([]), minLineLength = 100, maxLineGap = 5)
-line_image = display_line(roi, lines)
+line_image = display_line(roi, lines, lane_image)
 
-#combination = cv2.addWeighted(lane_image, 0.8, line_image, 1, 1)
+#combination = cv2.addWeighted(lane_image, 0.8, line_image, 1, 0)
 
 cv2.imshow("Result Image", line_image)
 cv2.waitKey(0)
