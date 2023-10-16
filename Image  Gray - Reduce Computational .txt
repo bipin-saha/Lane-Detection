@@ -6,3 +6,7 @@ Canny Edge Finding - Compute Gradient, compute rapid changes by derivative chang
 Find ROI Traingle and Performe bitwise and operation to show only lane
 
 Hough Transformation for straight line detection
+
+average the points slopes and intercepts for calculating only one averaged slope and intercepts
+
+dispaly the output
