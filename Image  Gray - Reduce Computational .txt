@@ -1,0 +1,8 @@
+Image > Gray - Reduce Computational complexity
+ > Gausing blur - smoothen the image, filter noise, help to capture edges
+
+Canny Edge Finding - Compute Gradient, compute rapid changes by derivative changes in pixels by all direction
+
+Find ROI Traingle and Performe bitwise and operation to show only lane
+
+Hough Transformation for straight line detection
