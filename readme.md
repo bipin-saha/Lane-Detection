@@ -15,6 +15,12 @@
 4. **Line Detection:**
    - Utilize the Hough Transformation for line detection using the `cv2.HoughLinesP` function. This method detects straight lines within the region of interest.
 
+   *Hough Transformation* is a feature extraction technique used in image analysis and computer vision to detect simple shapes, such as lines and circles, in digital images. In the context of line detection, the Hough Transformation method is particularly effective. It works by converting the Cartesian coordinates of a line to a polar representation, making it easier to detect lines that may not be readily identifiable using traditional image processing techniques.
+
+    The Hough Transformation algorithm, implemented in computer vision libraries like OpenCV, essentially converts a point in the image space to a line in the Hough space, enabling the identification of lines through their intersection points. By accumulating these intersections, the Hough Transformation can identify lines, even if they are broken or do not form a continuous path.
+
+    One of the key advantages of the Hough Transformation is its robustness in detecting lines despite noise and partial occlusions in images. However, it can be computationally intensive, particularly for complex images with a large number of edges. Nonetheless, it remains a fundamental tool for line detection and has paved the way for more advanced techniques in image analysis and pattern recognition.
+
 5. **Averaging Lane Lines:**
    - Compute the slopes and intercepts of detected lines separately for the left and right lanes using the `np.polyfit` function.
    - Average the slopes and intercepts for each lane using the `np.average` function to obtain a single averaged slope and intercept for each lane.
